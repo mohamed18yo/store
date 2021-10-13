@@ -20,7 +20,8 @@ function App() {
         <Route
           path={"/proceed-checkout/shipping-address"}
           component={Payment}
-        />
+        /> 
+        
         ,
         <Route path={"/proceed-checkout/place-order"} component={Payment} />
       </Switch>
