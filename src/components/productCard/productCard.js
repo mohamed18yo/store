@@ -20,9 +20,9 @@ function ProductCard(props) {
         text={"اطلب الان"}
         link={"/cart"}
         handleClick={() => {
-          if (props.product.countInStock) {
+          
             dispatch(AddCartItem(props.product, 1));
-          }
+          
         }}
       />
     </CardBox>

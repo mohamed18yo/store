@@ -17,7 +17,6 @@ export const AddCartItem=(product,quantity)=>{
                 type:INCREASE_COUNT,
                 payload:state.cart.cart
             })  
-
         }else{
             product.quantity = quantity;
             product.qty = quantity;
@@ -27,7 +26,6 @@ export const AddCartItem=(product,quantity)=>{
                 payload:product
             })
         }
-
         localStorage.setItem("cart", JSON.stringify(getState().cart.cart));
     }
 

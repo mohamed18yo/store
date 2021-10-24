@@ -167,7 +167,6 @@ export const orderRequest=(value)=>{
    const res= await axios.post('https://maba-shop.herokuapp.com/api/products/anaOrderRequest', Order)
    console.log("result: ",res)
    if(res){
-     
     localStorage.removeItem("cart");
    }
   }
