@@ -41,11 +41,20 @@ export const HeroTitle = styled("h1")`
   color: #242424;
   font-size: 50px;
   text-decoration: none;
-  @media screen and (max-width: 400px) {
-    font-size: 28px;
+  @media screen and (max-width: 500px) {
+    font-size: 22px;
   }
 `;
 
+export const Dis= styled('div')`
+    color: red;
+    background:yellow;
+    width:80%;
+    border-radius:20px;
+    padding:5px;
+    margin:1rem;
+    font-size: 18px;
+`;
 export const ProductImg = styled("img")`
   width: ${(props) => (props.width ? props.width : "200px")};
   min-width: 150px;
@@ -67,6 +76,17 @@ export const SliderImage = styled(ProductImg)`
     max-height:300px;
   }
  
+`;
+export const DiscountBox= styled(FlexRow)`
+    padding:1rem;
+    width:100%;
+    flex-wrap: wrap;
+    justify-content: center;
+`;
+export const DiscountImg= styled("img")`
+    width:33%;
+    min-width:300px;
+    margin-bottom:5px;
 `;
 export const Arrow = styled(FlexBox)`
   font-size: 25px;

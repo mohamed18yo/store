@@ -6,8 +6,7 @@ import {
   SideBox,
   FixedRow,
   Arrow,
-  Dot,
-  Span,
+  Dot,Dis,
 } from "./home.style";
 import { Typography, SectionRole } from "../../Global.style";
 import Butn from "../../components/button/button";
@@ -62,16 +61,14 @@ function HeroSection({ products }) {
             <HeroBox key={items._id}>
               <SideBox style={{ maxWidth: "500px" }}>
               
-                <Typography fontSize={25} color={"#242424"}>
+                <Typography style={{marginBottom:0, marginTop:0}} fontSize={23} color={"#242424"}>
                   تسوق الان بـ {items.price} ر.س
                   <br />
-                  <Span> مع امكانية التقسيط </Span>
+                 
                   <HeroTitle as={Link} to={`/product/${items._id}`}>{items.name}</HeroTitle>
                 </Typography>
                
-                {/* <Typography fontSize={32} color={"#242424"}>
-                {items.description}
-              </Typography> */}
+                <Dis>قسط بدفعة1000ريال مقدمة والباقي على 24 شهر</Dis>
                 <Butn
                   radius={"20px"}
                   style={{ height: 47 }}
@@ -83,7 +80,7 @@ function HeroSection({ products }) {
                 />
               </SideBox>
               <SideBox>
-                <SliderImage src={items.image} width={"100%"} />
+                <SliderImage src={items.images[0]} width={"100%"} />
               </SideBox>
             </HeroBox>
           ))}

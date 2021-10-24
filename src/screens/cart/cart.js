@@ -24,7 +24,7 @@ function Cart() {
             <ItemBox>
               {state.cart.cart.map((item) => (
                 <CartCard
-                  src={item.image}
+                  src={item.images[0]}
                   product={item}
                   price={item.price}
                   title={item.name}

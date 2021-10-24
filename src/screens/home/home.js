@@ -4,16 +4,21 @@
 
 import FeaturedProductsSection from "./featuerdProductSection";
 import HeroSection from "./heroSection";
-import AppleSection from './appleSection'
 import SonySection from './sonySection'
-import {fProduct,product,AppleProduct,SonyProduct} from './product';
+import AppleSection from './appleSection'
+import {SonyProduct,Hproducts,fProduct,ApplePro,Ipads} from './product';
+import DiscountSection from "./discountSection";
+import IpadSection from "./ipadSection";
 
 function Home(){
+
     return<>
-    <HeroSection products={product}/>
-    <FeaturedProductsSection products={fProduct}/>
-    <AppleSection products={AppleProduct}/>
+    <HeroSection products={Hproducts}/>
+    <AppleSection products={ApplePro} />
+    <DiscountSection/>
     <SonySection products={SonyProduct}/>
+    <IpadSection products={Ipads}/>
+    <FeaturedProductsSection products={fProduct}/>
     </>
 }
 

@@ -32,7 +32,6 @@ export function PaymentComponent() {
           phonNum: "",
           city: "",
           address: "",
-          postalCode:  "",
         }}
         validationSchema={ShippingSchema}
         onSubmit={handleSaveShipping}
@@ -173,13 +172,7 @@ export function PaymentComponent() {
                     {errors.phonNum && touched.phonNum ? (
                       <ErrorMsg>{errors.phonNum}</ErrorMsg>
                     ) : null}
-                    <Typography fontSize={22} color={"#707070"}>
-                      اللون
-                    </Typography>
-                    <Input name={"postalCode"}></Input>
-                    {errors.postalCode && touched.postalCode ? (
-                      <ErrorMsg>{errors.postalCode}</ErrorMsg>
-                    ) : null}
+                    
                   </FlexCol>
                   <FlexCol
                     style={{ width: "45%", minWidth: "300px", height: "197px" }}

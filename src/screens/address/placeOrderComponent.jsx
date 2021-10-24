@@ -41,7 +41,7 @@ function PlaceOreder() {
                 </FlexRow>
                 <OrdersBox>
                   {state.cart.cart.map((item)=><FlexRow key={item._id} style={{ height: "106px" }}>
-                    <ProductImg src={item.image} width={135} />
+                    <ProductImg src={item.images[0]} width={135} />
                     <FlexCol style={{ height: "99px" }}>
                       <Typography fontSize={16} color={"#707070"}>
                         {item.name}
@@ -116,9 +116,9 @@ function PlaceOreder() {
                     </FlexRow>
               </OrderDetailsBox>
               <Alink 
-              href={"https://wa.me/966582622161"}
-              >تواصل واتساب للدفع</Alink>
-               
+              href={"https://wa.me/966592629730"}
+              ><ProductImg width="45px" src="/man.jpg"/>
+                تواصل واتساب للدفع  </Alink>
             </FlexCol>
           </FlexRow>
        

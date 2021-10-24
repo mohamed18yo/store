@@ -8,9 +8,9 @@ import{NavSection,LogoImg} from './navbar.style';
 
 function NavBar(){
     return <NavSection>
-        <Typography as={Link} to={"/"} fontSize={"25"} color={"#fff"}>
-            <LogoImg src="https://qomrh.com/wp-content/uploads/2019/06/logo23-1030x553.png" />
+        <Typography as={Link} to={"/"} fontSize={"25"} color={"#fff"}>مؤسسة أنا التقني 
         </Typography>
+        <LogoImg  src="https://cdn.salla.sa/zadg/5HaFYbna84WoUSw58hzR6THGdYbjkTxZpGr1jKx2.png" />
     </NavSection>
 }
 export default NavBar;

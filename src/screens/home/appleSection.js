@@ -40,38 +40,41 @@ const styles = {
 function AppleSection({products}) {
   const [index, setIndex] = useState(0);
   const handleChangeIndex = () => {};
-  // get screen width 
+       // get screen width 
   const chunkSize =window.innerWidth > 1100 ? 3 : window.innerWidth > 800 ? 2 : 1;  // constract array slider
   
-        const splitArr= ()=>{
-          const arr1=[...products]
-          const newArr=[] 
-          while(arr1.length) {newArr.push(arr1.splice(0, chunkSize));}
-          console.log("productArray: ",newArr)
+  const splitArr= ()=>{
+    const arr1=[...products]
+    const newArr=[] 
+    while(arr1.length) {newArr.push(arr1.splice(0, chunkSize));}
+    console.log("productArray: ",newArr)
 
-          return newArr.map((itemProducts, index) => (
-            <FlexRow key={index}>
-              {itemProducts.map((pro) => (
-                <ProductCard 
-                product={pro}
-                key={index}
-                Id={pro._id}
-                Name={pro.name}
-                src={pro.image}
-                Rate={pro.rating}
-                Price={pro.price}
-                title={pro.name}
-              ></ProductCard> 
-              ))}
-            </FlexRow>
-          ));
-        };
+    return newArr.map((itemProducts, index) => (
+      <FlexRow style={{justifyContent: "center"}} key={index}>
+        {itemProducts.map((pro) => (
+          
+          <ProductCard 
+          product={pro}
+          key={index}
+          Id={pro._id}
+          Name={pro.name}
+          src={pro.images[0]}
+          Rate={pro.rating}
+          Price={pro.price}
+          title={pro.name}
+          description={pro?.description}
+        ></ProductCard>
+       
+        ))}
+      </FlexRow>
+    ));
+  };
         
   return (
-    <SectionRole color={"#F7F8FC"}>
+    <SectionRole  color={"#F7F8FC"}>
       <IneerSection>
         <ProductsBox>
-          <Typography  style={{margin:"0 0"}} fontSize={32}> منتجات آبل </Typography>
+          <Typography  style={{margin:"0 0"}} fontSize={32}>منتجات ابل</Typography>
           <Line style={{}} color={"#fcdd06bf"} height={"7px"}></Line>
           <Line color={"#a0a0a0"} height={"1px"} width={"100%"}></Line>
           <SwipeableViews
@@ -79,18 +82,21 @@ function AppleSection({products}) {
               index={index}
               onChangeIndex={handleChangeIndex}   
           >
-           {splitArr()}
+         
+            {splitArr()}
+
            </SwipeableViews>
-          <FixedRow  style={{marginTop:"2rem"}}>
+          <FixedRow  style={{margin:"20px 0 20px"}}>
                     {splitArr().map((dot,i)=>
                         <Dot
-                        key={i}
                         onClick={() => {
                           setIndex(i);
                         }}
                         isGray={index !== i}
                       />
-                    )}            
+                    )}
+            
+            
           </FixedRow>
         </ProductsBox>
       </IneerSection>

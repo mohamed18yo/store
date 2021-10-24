@@ -50,18 +50,22 @@ function SonySection({products}) {
     console.log("productArray: ",newArr)
 
     return newArr.map((itemProducts, index) => (
-      <FlexRow key={index}>
+      <FlexRow style={{justifyContent: "center"}} key={index}>
         {itemProducts.map((pro) => (
+          
           <ProductCard 
           product={pro}
           key={index}
           Id={pro._id}
           Name={pro.name}
-          src={pro.image}
+          src={pro.images[0]}
           Rate={pro.rating}
           Price={pro.price}
           title={pro.name}
+          description={pro?.description}
+
         ></ProductCard>
+       
         ))}
       </FlexRow>
     ));

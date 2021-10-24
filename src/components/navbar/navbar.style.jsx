@@ -9,10 +9,11 @@ export const NavSection= styled(FlexRow)`
     width:100%;
     box-sizing: border-box;
     padding: 0 5%;
-    background-color:rgb(200 199 204 / 50%)
+    background: #000;
+    /* background-color:rgb(200 199 204 / 50%) */
 `;
 
 export const LogoImg= styled ('img')`
-    max-height:95px;
+    max-height:75px;
     object-fit: cover;
 `

@@ -41,9 +41,7 @@ export const ShippingSchema = () => {
   return yup.object({
     city: yup.string().required("الرجاء ادخال المدينة "),
     address: yup.string().required("الرجاء ادخال العنوان"),
-    postalCode: yup.string().required("الرجاء ادخال اللون"),
     name: yup.string().required("الرجاء ادخال الاسم "),
-    phonNum: yup.number().required("الرجاء ادخال رقم صحيح"),
-
+    phonNum: yup.string().required("الرجاء ادخال رقم صحيح"),
   });
 };

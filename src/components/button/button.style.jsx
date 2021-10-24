@@ -10,7 +10,7 @@ export const CustomeButton = styled(Link)`
   width: ${(props) => (props.width ? props.width : "200px")};
   min-height: 45px;
   height: 45px;
-  background-color: ${(props) => (props.isGray ? "#f2f2f2" : "#fcdd06bf")};
+  background-color: ${(props) => (props.isGray ? "#f2f2f2" : "#05e4f5ed")};
   color: ${(props) => (props.isGray ? "#242424" : "#242424")};
   border: none;
   border-radius: ${(props) => (props.radius ? props.radius : "10px")};

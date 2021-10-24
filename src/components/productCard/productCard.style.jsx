@@ -8,7 +8,7 @@ import { FlexCol } from '../../Global.style';
 export const CardBox= styled(FlexCol)`
     width: 300px;
     min-width:285px;
-    height:400px;
+    height:440px;
     padding:1rem;
     margin:0 1.5px 5px;
     background-color:#fff;

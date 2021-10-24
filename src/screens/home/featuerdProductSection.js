@@ -40,23 +40,41 @@ const styles = {
 function FeaturedProductsSection({products}) {
   const [index, setIndex] = useState(0);
   const handleChangeIndex = () => {};
-// get screen width 
-    const chunkSize = window.innerWidth > 1100 ? 3 : window.innerWidth > 800 ? 2 : 1;
-// constract array slider
-     const arr=[...products]
-      const productArray=[] 
+       // get screen width 
+  const chunkSize =window.innerWidth > 1100 ? 3 : window.innerWidth > 800 ? 2 : 1;  // constract array slider
+  
+  const splitArr= ()=>{
+    const arr1=[...products]
+    const newArr=[] 
+    while(arr1.length) {newArr.push(arr1.splice(0, chunkSize));}
+    console.log("productArray: ",newArr)
 
-      for (let index = 0; index < arr.length; index++) {
-        productArray.push(arr.splice(0, chunkSize))
-        
-      }
+    return newArr.map((itemProducts, index) => (
+      <FlexRow style={{justifyContent: "center"}} key={index}>
+        {itemProducts.map((pro) => (
+          <ProductCard 
+          product={pro}
+          key={index}
+          Id={pro._id}
+          Name={pro.name}
+          src={pro.images[0]}
+          Rate={pro.rating}
+          Price={pro.price}
+          title={pro.name}
+          description={pro?.description}
+
+        ></ProductCard>
+        ))}
+      </FlexRow>
+    ));
+  };
         
   return (
-    <SectionRole color={"#F7F8FC"}>
+    <SectionRole  color={"#F7F8FC"}>
       <IneerSection>
         <ProductsBox>
-          <Typography style={{margin:"0 0"}} fontSize={32}>أحدث التصنيفات</Typography>
-          <Line style={{ }} color={"#fcdd06bf"} height={"7px"}></Line>
+          <Typography  style={{margin:"0 0"}} fontSize={32}>أحدث التصنيفات </Typography>
+          <Line style={{}} color={"#fcdd06bf"} height={"7px"}></Line>
           <Line color={"#a0a0a0"} height={"1px"} width={"100%"}></Line>
           <SwipeableViews
               style={Object.assign({}, styles.root, styles.root)}
@@ -64,24 +82,11 @@ function FeaturedProductsSection({products}) {
               onChangeIndex={handleChangeIndex}   
           >
          
-            {productArray.map((item)=>
-            <FlexRow key={item._id} style={{ marginTop: 5}}>
-                      {item.map((pro)=><ProductCard 
-                      product={pro}
-                      key={pro._id}
-                      Id={pro._id}
-                      Name={pro.name}
-                      src={pro.image}
-                      Rate={pro.rating}
-                      Price={pro.price}
-                      title={pro.name}
-                    ></ProductCard>  )}
-                </FlexRow>
-            )}
+            {splitArr()}
 
            </SwipeableViews>
-          <FixedRow  style={{marginTop:"5px"}}>
-                    {productArray.map((dot,i)=>
+          <FixedRow  style={{margin:"20px 0 20px"}}>
+                    {splitArr().map((dot,i)=>
                         <Dot
                         onClick={() => {
                           setIndex(i);
