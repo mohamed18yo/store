@@ -21,9 +21,7 @@ function ProductCard(props) {
         text={"اطلب الان"}
         link={"/cart"}
         handleClick={() => {
-          
             dispatch(AddCartItem(props.product, 1));
-          
         }}
       />
     </CardBox>
