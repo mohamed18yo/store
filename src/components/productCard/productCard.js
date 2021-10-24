@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { Dis } from "../../screens/home/home.style";
 function ProductCard(props) {
     const dispatch= useDispatch()
+    // 
   return (
     <CardBox>
       <Img src={props.src} />
